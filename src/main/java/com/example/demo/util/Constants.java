@@ -19,6 +19,17 @@ public class Constants {
 
     public static final String INVALID_ADDRESSLINES = ".*\\b(none|unknown|unkown)\\b.*";
 
+    // Matches: 300000000, 400000000, 500000000 || 000000000
+    public static final String SPECIAL_TIN_LIST_DIGITAL = "[3-5][0]{8}|[0]{9}";
+
+    // Will match all exactly 9 digit numbers. No special characters or alphabets.
+    public static final String ONLY_DIGITS = "\\d{9}";
+
+    public static final String DATE_PATTERN = "mm/dd/yyyy";
+    public static final String DATE_PATTERN_NEW = "MM/dd/uuuu";
+
+    public static final String HYPHEN_DELIMITER = "-";
+
     public static final String ADDRESSLINE1 = "addressLine1";
     public static final String ADDRESSLINE2 = "addressLine2";
 

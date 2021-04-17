@@ -107,6 +107,21 @@ public class ValidateAddressService {
             errorInfoList.add(errorCode);
         }
 
+        // Validating Country Code
+        if (StringUtils.isNotBlank(address.getCountryCode())) {
+            if (address.getCountryCode().trim().length() >= 100) {
+                errorCode = createErrorInfo("ERR_ADDRESS_COUNTRY_EXCEEDS_100_CHARS", "Address country cannot exceed 100 characters.");
+                errorInfoList.add(errorCode);
+            }
+            if (!matchPattern(address.getStateCode(), ALPHA)) {
+                errorCode = createErrorInfo("ERR_ADDRESS_COUNTRY_ONLY_ALPHABETS_ALLOWED", "Address country can only contain alphabets");
+                errorInfoList.add(errorCode);
+            }
+        } else {
+            errorCode = createErrorInfo("ERR_ADDRESS_COUNTRY_BLANK", "Address country cannot be blank");
+            errorInfoList.add(errorCode);
+        }
+
         // Validating Pin Code
         if (StringUtils.isNotBlank(address.getPostalCode())) {
             if (address.getPostalCode().trim().length() >= 10) {
