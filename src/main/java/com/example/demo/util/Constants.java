@@ -25,6 +25,19 @@ public class Constants {
     // Will match all exactly 9 digit numbers. No special characters or alphabets.
     public static final String ONLY_DIGITS = "\\d{9}";
 
+    // First position must be an alphabetical character, all other positions may contain alpha, space, single quote ('), period (.), and hyphen (-)
+    public static final String ALPHA_CHARACTER_REGEX = "^[a-zA-Z][a-zA-Z '.-]*$";
+
+    // Will match any string that contains at least one digit
+    public static final String STRING_CONTAINS_NUMBERS = ".*\\d+.*";
+
+    // Will match any string that contains a special character. So anything that is NOT one of these characters.
+    public static final String STRING_CONTAINS_SPECIAL_CHARACTERS = ".*[^a-zA-Z '.-].*";
+
+    public static final String[] SPECIAL_CHARS_FOR_NAME  = {"~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "|", "{", "}", ";", ",", ":", "?", "/", "<", ">", "\\", "\""};
+
+    public static final String[] INVALID_FIELD_LIST_NAMES = {"UNKNOWN", "UNKOWN", "N/A", "N / A", "?", "??", "???", "????", "DONTKNOW", "DON'T KNOW", "NOTPROVIDED", "NOT PROVIDED", "NOT APPLICABLE", "NOTAPPLICABLE"};
+
     public static final String DATE_PATTERN = "mm/dd/yyyy";
     public static final String DATE_PATTERN_NEW = "MM/dd/uuuu";
 
@@ -32,5 +45,9 @@ public class Constants {
 
     public static final String ADDRESSLINE1 = "addressLine1";
     public static final String ADDRESSLINE2 = "addressLine2";
+
+    public static final String FIRST_NAME = "firstName";
+    public static final String MIDDLE_NAME = "middleName";
+    public static final String LAST_NAME = "lastName";
 
 }
